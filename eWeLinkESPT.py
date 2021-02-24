@@ -2,7 +2,7 @@
 
 # eWeLinkESPT is a tool to decode and decrypt the WiFi network credentials transmitted to an ESP-based IoT device supported by the eWeLink mobile application.
 # This tool reverses the eWeLink own implementation of the ESP Touch protocol, which is used by-default in the WiFi pairing process of the sonoff and many other IoT devices.
-# This tool has been tested with the Android (v4.0.3 and v4.4.1) and iOS (v3.15.0) eWeLink application versions.
+# This tool has been tested with the Android (v4.9.2 and earlier) and iOS (v4.9.1 and earlier) eWeLink application versions.
 
 import pyshark
 import sys
@@ -148,7 +148,7 @@ def main():
                                 while(p_da != getNextMulticastMAC(DC_buffer[-1][1])):
                                     print("An error occurred in multicast destination address sequence")
                                     next_addr = getNextMulticastMAC(DC_buffer[-1][1])
-                                    print('scrivo x3: ' + str(next_addr))
+                                    print('writing x3: ' + str(next_addr))
                                     DC_buffer.append(['x', next_addr])
                                     DC_buffer.append(['x', next_addr])
                                     DC_buffer.append(['x', next_addr])
